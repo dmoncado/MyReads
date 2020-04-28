@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 
-class TestComponent extends Component {
-	state = {
-		greeting: "here is my component"
-	};
-
+class Header extends Component {
 	render() {
 		return (
-			<div>
-				<h1> {this.state.greeting} </h1>
+			<div className="list-books-title">
+				<h1>MyReads</h1>
 			</div>
 		);
 	}
 }
 
-export default TestComponent;
+export default Header; 
