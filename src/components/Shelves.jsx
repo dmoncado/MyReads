@@ -8,15 +8,15 @@ class Shelves extends Component {
 		const currentlyReading = allBooks.filter(book => book.shelf === "currentlyReading");
 		const wantToRead = allBooks.filter(book => book.shelf === "wantToRead");
 		const read = allBooks.filter(book => book.shelf === "read");
-		console.log("here they are again from Shelves -->", allBooks);
+		console.log("From Shelves -->", allBooks);
 
 		return (
 			/* Shelves */
 			<div className="list-books-content">
 				<div>
-					<Shelf books={currentlyReading} /> { /* Shelf - Currently Reading */ }
-					<Shelf books={wantToRead} /> { /* Shelf - Want to Read */ }
-					<Shelf books={read} /> { /* Shelf - Read */ }
+					<Shelf books={currentlyReading} title={"Currently Reading"} changeShelf={this.props.changeShelf} /> { /* Shelf - Currently Reading */ }
+					<Shelf books={wantToRead} title={"Want to Read"} changeShelf={this.props.changeShelf} /> { /* Shelf - Want to Read */ }
+					<Shelf books={read} title={"Read"} changeShelf={this.props.changeShelf} /> { /* Shelf - Read */ }
 				</div>
 			</div>
 		);

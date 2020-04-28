@@ -7,7 +7,7 @@ class Shelf extends Component {
 
 		return (
 			<div className="bookshelf">
-				<h2 className="bookshelf-title">Currently Reading</h2>
+				<h2 className="bookshelf-title">{this.props.title}</h2>
 				<div className="bookshelf-books">
 					<ol className="books-grid">
 
@@ -23,7 +23,7 @@ class Shelf extends Component {
 											}}>
 										</div>
 										<div className="book-shelf-changer">
-											<select>
+											<select value={book.shelf} onChange={e => this.props.changeShelf(book => e.target.value)}>
 												<option value="move" disabled>Move to...</option>
 												<option value="currentlyReading">Currently Reading</option>
 												<option value="wantToRead">Want to Read</option>

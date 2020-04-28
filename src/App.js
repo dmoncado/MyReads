@@ -23,8 +23,12 @@ class BooksApp extends React.Component {
 	}
 
 	componentDidMount() {
-		BooksAPI.getAll().then(res => console.log("here they are -->", res)); // testing
+		//BooksAPI.getAll().then(res => console.log("here they are -->", res)); // testing
 		BooksAPI.getAll().then(res => this.setState({ books: res }));
+	}
+
+	changeBookShelf(book, shelf) {
+		book.shelf = shelf;
 	}
 
 	render() {
@@ -35,7 +39,7 @@ class BooksApp extends React.Component {
 				) : (
 					<div className="list-books">
 						<Header />
-						<Shelves allBooks={this.state.books} />
+						<Shelves allBooks={this.state.books} changeShelf={this.changeBookShelf} />
 						<SearchButton showSearchPage={this.updateSearchPageState} />
 					</div>
 				)}
